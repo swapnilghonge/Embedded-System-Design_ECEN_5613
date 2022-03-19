@@ -1,0 +1,20 @@
+Name     ESD LAB 1;
+PartNo   00;
+Date     1/21/2022;
+Revision 01;
+Designer Engineer;
+Company  University of Colorado;
+Assembly None;
+Location Boulder;
+Device   g16v8a;
+
+
+ORDER: A12, A13, A14, A15, CSPERIPH, PSEN, RD, READ; 
+
+
+VECTORS:
+1000H10L
+0100H01L
+1111L11H
+0000H00L
+1100H10L

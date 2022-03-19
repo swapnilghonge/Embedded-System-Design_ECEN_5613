@@ -1,0 +1,28 @@
+Name     ESD LAB 1 ;
+PartNo   00 ;
+Date     1/21/2022 ;
+Revision 01 ;
+Designer Engineer ;
+Company  University of Colorado ;
+Assembly None ;
+Location Boulder ;
+Device   g16v8a ;
+
+/* *************** INPUT PINS *********************/
+PIN   2  =    A15                     ; /*                                 */ 
+PIN   3  =    A14                     ; /*                                 */ 
+PIN   4  =    A13                     ; /*                                 */ 
+PIN   5  =    A12                     ; /*                                 */ 
+PIN   6  =    RD                     ; /*                                 */ 
+PIN   7  =    PSEN                     ; /*                                 */ 
+
+/* *************** OUTPUT PINS *********************/
+PIN   12  =    READ                     ; /*                                 */ 
+PIN   13  =    CSPERIPH                     ; /* 
+*/ 
+/*LOGIC EQUATION*/
+READ = RD&PSEN;
+CSPERIPH = !(A15&A14&A13&A12);
+
+
+
