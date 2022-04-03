@@ -1,0 +1,28 @@
+%SIGNAL
+PIN  14 =  74LS374_C 
+PIN   2 =  A15 
+PIN  12 =  CE 
+PIN  15 =  NVSRAM_WR 
+PIN  13 =  OE 
+PIN   7 =  PSEN 
+PIN   6 =  RD 
+PIN   8 =  WR 
+%END
+
+%FIELD
+%END
+
+%EQUATION
+74LS374_C =>
+    !A15 & !WR
+
+CE =>
+    A15
+
+NVSRAM_WR =>
+    WR
+
+OE =>
+    PSEN & RD
+
+%END

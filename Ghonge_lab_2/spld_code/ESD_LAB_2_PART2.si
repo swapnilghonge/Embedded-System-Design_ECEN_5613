@@ -1,0 +1,16 @@
+Name     ESD_LAB_2_part2;
+PartNo   00;
+Date     2/18/2022;
+Revision 01;
+Designer Swapnil;
+Company  University of Colorado;
+Assembly None;
+Location ;
+Device   virtual;
+
+
+ORDER: A12, A13, A14, A15, CSPERIPH, PSEN, RD, READ, WR, WRITE; 
+
+
+VECTORS:
+000***1*1*

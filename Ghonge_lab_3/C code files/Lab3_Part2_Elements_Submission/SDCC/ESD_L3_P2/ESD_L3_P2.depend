@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1646358057 source:c:\users\swapnil\documents\sdcc\esd_l3_p2\_heap.c
+
+1646397197 source:c:\users\swapnil\documents\sdcc\esd_l3_p2\main.c
+	<mcs51/8051.h>
+	<at89c51ed2.h>
+	<mcs51reg.h>
+	<stdio.h>
+	<stdint.h>
+	<stdlib.h>
+
+1571230442 c:\users\swapnil\documents\sdcc\esd_l3_p2\sdcc_syntax_example.h
+

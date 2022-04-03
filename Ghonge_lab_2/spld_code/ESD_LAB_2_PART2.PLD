@@ -1,0 +1,30 @@
+Name     ESD_LAB_2_part2 ;
+PartNo   00 ;
+Date     2/18/2022 ;
+Revision 01 ;
+Designer Swapnil ;
+Company  University of Colorado ;
+Assembly None ;
+Location  ;
+Device   virtual ;
+
+/* *************** INPUT PINS *********************/
+PIN  2   =   A15                      ; /*                                 */ 
+PIN  3   =   A14                      ; /*                                 */ 
+PIN  4   =   A13                      ; /*                                 */ 
+PIN  5   =   A12                      ; /*                                 */ 
+PIN  6   =   PSEN                      ; /*                                 */ 
+PIN  7   =   RD                      ; /*                                 */ 
+PIN  9   =   WR                     ; /*                                 */ 
+
+/* *************** OUTPUT PINS *********************/
+PIN  12   =   READ;               
+PIN  13   =   CSPERIPH;                     
+PIN  15   =   WRITE;                     
+
+/*lOGIC*/
+READ = RD & PSEN;
+CSPERIPH = A15;
+WRITE = (!A15 & !WR);
+
+

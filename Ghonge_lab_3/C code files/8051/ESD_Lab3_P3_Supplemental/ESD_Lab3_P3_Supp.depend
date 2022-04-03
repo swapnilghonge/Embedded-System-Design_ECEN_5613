@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1647068044 source:c:\users\swapnil\documents\sdcc\esd_lab3_p3_supp\main.c
+	<mcs51/8051.h>
+	<at89c51ed2.h>
+	<mcs51reg.h>
+	<stdio.h>
+	<stdint.h>
+	<stdlib.h>
+

@@ -1,0 +1,72 @@
+A51 MACRO ASSEMBLER  ESD_LAB2_PART1                                                       02/11/2022 14:48:50 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN ESD_lab2_part1.OBJ
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE ESD_lab2_part1.asm SET(SMALL) DEBUG PRINT(.\Listings\ESD_lab2_part1.lst
+                      ) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1                     ORG 0000H
+0000 02000E            2                     LJMP MAIN
+000B                   3                     ORG 000BH
+000B 02001F            4                     LJMP ISR_TIMER
+                       5     
+000E 75A882            6     MAIN:   MOV IE, #82H ;Setting up the interrupt enable register
+0011 758901            7                     MOV TMOD, #01H ; Using Timer0 mode 1
+0014 758A00            8                     MOV TL0, #00H ; initialize the value of 00 in lower register
+0017 758C00            9                     MOV TH0,#00H ; initialize the value of 00 in higher register
+001A 758810           10                     MOV TCON, #10H ; set timer overflow flag
+                      11     
+001D 80FE             12     LOOP:   SJMP LOOP
+                      13     
+001F B292             14     ISR_TIMER: CPL P1.2 ; complement the unused port
+0021 B9050F           15                             CJNE R1,#05H, EXTRA_LOOP
+0024 B291             16                             CPL P1.1 ; toggle the LED
+0026 758A00           17                             MOV TL0,#00H ; initialize the value of Lower register
+0029 758C00           18                             MOV TH0,#00H ; initialize the value of Lower register
+002C 758810           19                             MOV TCON,#10H ; set timer overflow flag
+002F 7900             20                             MOV R1,#00H ; initialize the counter by Register R1 by zero.
+0031 801B             21                             SJMP ENDLOOP
+0033 B9040C           22     EXTRA_LOOP: CJNE R1,#04H,LOOP1
+0036 758AD1           23                             MOV TL0,#0D1H ; for measuring 40ms counter value be 34769 hex value
+                              be 87D1 the TL0 value to be D1
+0039 758C87           24                             MOV TH0,#87H
+003C 758810           25                             MOV TCON,#10H ; set timer overflow flag
+003F 09               26                             INC R1 ; increment the counter regsiter
+0040 800C             27                             SJMP ENDLOOP
+0042 758A00           28     LOOP1:          MOV TL0, #00H ; Loop to counter 70ms * 5 = 350ms
+0045 758C00           29                             MOV TH0,#00H
+0048 758810           30                             MOV TCON,#10H
+004B 09               31                             INC R1 ;increment the counter regsiter
+004C 8000             32                             SJMP ENDLOOP
+004E B292             33     ENDLOOP:        CPL P1.2 ; complement the unused register
+0050 32               34                             RETI ; return to interrupt
+                      35                             END
+A51 MACRO ASSEMBLER  ESD_LAB2_PART1                                                       02/11/2022 14:48:50 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+ENDLOOP. . . . . .  C ADDR   004EH   A   
+EXTRA_LOOP . . . .  C ADDR   0033H   A   
+IE . . . . . . . .  D ADDR   00A8H   A   
+ISR_TIMER. . . . .  C ADDR   001FH   A   
+LOOP . . . . . . .  C ADDR   001DH   A   
+LOOP1. . . . . . .  C ADDR   0042H   A   
+MAIN . . . . . . .  C ADDR   000EH   A   
+P1 . . . . . . . .  D ADDR   0090H   A   
+TCON . . . . . . .  D ADDR   0088H   A   
+TH0. . . . . . . .  D ADDR   008CH   A   
+TL0. . . . . . . .  D ADDR   008AH   A   
+TMOD . . . . . . .  D ADDR   0089H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)
