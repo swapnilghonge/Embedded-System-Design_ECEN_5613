@@ -1,0 +1,21 @@
+-muwx
+-i bin\Release\ESD_l4_p2_2.ihx
+-M
+-I 0x0100
+-X 0x1000
+-C 0x10000
+-b HOME = 0x0000
+-b XSEG = 0x0001
+-b PSEG = 0x0001
+-b ISEG = 0x0000
+-b BSEG = 0x0000
+-k C:\Program Files\sdcc\lib
+-k C:\Program Files\SDCC\bin\..\lib\large
+-l mcs51
+-l libsdcc
+-l libint
+-l liblong
+-l libfloat
+obj\Release\main.rel
+
+-e

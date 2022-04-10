@@ -1,0 +1,27 @@
+Name     ESD_Lab4_part2 ;
+PartNo   00 ;
+Date     3/30/2022 ;
+Revision 01 ;
+Designer Engineer ;
+Company  University of Colorado ;
+Assembly None ;
+Location  ;
+Device   g16v8a ;
+
+/* *************** INPUT PINS *********************/
+PIN   2  =   A15                      ; /*      Memory Assignment                           */ 
+PIN   3  =   A14                      ; /*      DATA A14 pin                           */ 
+PIN   7 =    PSEN                     ; /*      Program store enable pin                           */ 
+PIN   8  =   WR                      ; /*        write pin                         */ 
+PIN   6  =   RD                      ; /*         read pin                        */ 
+
+/* *************** OUTPUT PINS *********************/
+PIN   13  = OE                        ; /*                                 */ 
+PIN   12  = CE                        ; /*      chip enable                           */                       ; /*                                 */ 
+PIN   15  =  NVSRAM_WR                       ; /*          write on NVRAM                       */ 
+PIN    17 =  LCD                         ; /*   Pin on LCD to SPLD                              */ 
+
+
+LCD = A15 &(!A14); /*memory assignment to asccess 0x400h of Xram*/
+
+

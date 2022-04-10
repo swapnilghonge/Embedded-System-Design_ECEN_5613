@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1649494498 source:c:\users\swapnil\documents\sdcc\esd_l4_p2_2\main.c
+	<at89c51ed2.h>
+	<stdio.h>
+	<stdint.h>
+
